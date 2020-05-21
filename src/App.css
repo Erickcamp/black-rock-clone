@@ -1,38 +1,145 @@
 .App {
-  text-align: center;
+  padding: 0px 100px 200px 100px;
+background-image: url('https://blackrockdigital.github.io/startbootstrap-agency/assets/img/header-bg.jpg');
+background-size: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+padding: 30px;
+position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Charlene-said-so {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.logo-area {
+
+}
+.start {
+  height: 30px;
+  
+}
+.nav{
+  /* margin: 0px 0px 0px 600px; */
+}
+.nav-list {
+display: flex;
+list-style-type: none;
+}
+.nav-list-item a{
+  text-decoration: none;
   color: white;
+  padding: 14px;
+  text-transform: uppercase;
+}
+.nav-list-item a:hover{
+  color: #fed136;
+}
+.mobile-nav{
+display: flex;
+cursor: pointer;
+/* display: none; */
+/* position: absolute; */
+color: white;
+list-style-type: none;
+}
+.menu {
+color: black;
+/* position: absolute; */
+/* left: 750px; */
+}
+p.menu{
+  background-color: #fed136;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  /* margin: 10px; */
+}
+.hamburger {
+height: 15px;
+background-color: #fed136;
+display: none;
+/* position: absolute; */
+left: 812px;
+top: 29px;
+
+}
+.mobile-nav-list{
+  list-style-type: none;
+}
+.mobile-nav-list-open{
+  right: 0px;
+  list-style-type: none;
+}
+.mobile-nav-list-item{
+  list-style-type: none;
+}
+.welcome {
+text-align: center;
+padding: 200px;
+}
+.welcome-text{
+color: white;
+text-align: center;
+font-size: 50px;
+font-style: italic;
 }
 
-.App-link {
-  color: #61dafb;
+.greeting-text{
+color: white;
+text-align: center;
+font-size: 70px;
+font-weight: bolder;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.more-text{
+color: white;
+text-decoration: none;
+font-size: 20px;
+}
+a.more-text{
+  background-color: #fed136;
+  color: white;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+}
+@media (min-width: 992px) {
+  .header {
+    /* background-color: maroon; */
   }
-  to {
-    transform: rotate(360deg);
+  .menu {
+    display: none
+  }
+  .hamburger{
+    display: none;
+  }
+  p.menu {
+    display: none;
+  }
+  .mobile-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  /* .boxes-hold {
+    flex-direction: column;
+    height: 50vh;
+    align-items: center;
+  } */
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .mobile-nav-list {
+    display: flex;
   }
 }
