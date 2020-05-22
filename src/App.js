@@ -15,7 +15,6 @@ export default class App extends Component {
     });
   };
   render() {
-    console.log(this.state.isMobileMenuOpen);
     return (
       <div className="App">
         <header className="header">
@@ -27,46 +26,21 @@ export default class App extends Component {
                 alt="start bootstrap"
               />
             </div>
-            <nav className="nav">
-              <ul className="nav-list">
-                <li className="nav-list-item">
-                  <a href="link">Services</a>
-                </li>
-                <li className="nav-list-item">
-                  <a href="link">Portfolio</a>
-                </li>
-                <li className="nav-list-item">
-                  <a href="link">About</a>
-                </li>
-                <li className="nav-list-item">
-                  <a href="link">Team</a>
-                </li>
-                <li className="nav-list-item">
-                  <a href="link">Contact</a>
-                </li>
-              </ul>
-            </nav>
-            <nav className="mobile-nav">
-              <p className="menu" onClick={this.toggleMobileMenu}>
-                Menu
-              </p>
-              {/* <img
-                className="hamburger"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png"
-                alt="hamburger"
-                onClick={this.toggleMobileMenu}
-              /> */}
-              {this.state.isMobileMenuOpen && (
-                <ul>
-                  <li className="mobile-nav-list-item">Services</li>
-                  <li className="mobile-nav-list-item">Portfolio</li>
-                  <li className="mobile-nav-list-item">About</li>
-                  <li className="mobile-nav-list-item">Team</li>
-                  <li className="mobile-nav-list-item">Contact</li>
-                </ul>
-              )}
-            </nav>
+            <RegularNav />
+            <MobileNav
+              open={this.state.isMobileMenuOpen}
+              onClick={this.toggleMobileMenu}
+            />
           </div>
+          {this.state.isMobileMenuOpen && (
+            <ul className="white">
+              <li className="mobile-nav-list-item">Services</li>
+              <li className="mobile-nav-list-item">Portfolio</li>
+              <li className="mobile-nav-list-item">About</li>
+              <li className="mobile-nav-list-item">Team</li>
+              <li className="mobile-nav-list-item">Contact</li>
+            </ul>
+          )}
           <div className="welcome">
             <h1>
               <span className="welcome-text">Welcome To Our Studio!</span>
@@ -83,3 +57,35 @@ export default class App extends Component {
     );
   }
 }
+
+const MobileNav = ({ open, onClick }) => {
+  return (
+    <nav className="mobile-nav">
+      <p className="menu" onClick={onClick}>
+        Menu
+      </p>
+    </nav>
+  );
+};
+
+const RegularNav = () => (
+  <nav className="nav">
+    <ul className="nav-list">
+      <li className="nav-list-item">
+        <a href="link">Services</a>
+      </li>
+      <li className="nav-list-item">
+        <a href="link">Portfolio</a>
+      </li>
+      <li className="nav-list-item">
+        <a href="link">About</a>
+      </li>
+      <li className="nav-list-item">
+        <a href="link">Team</a>
+      </li>
+      <li className="nav-list-item">
+        <a href="link">Contact</a>
+      </li>
+    </ul>
+  </nav>
+);

@@ -7,6 +7,9 @@ background-size: cover;
 padding: 30px;
 position: relative;
 }
+.white {
+  color: white
+}
 .Charlene-said-so {
   display: flex;
   justify-content: space-between;
@@ -121,6 +124,9 @@ a.more-text{
     display: none;
   }
   .mobile-nav {
+    display: none;
+  }
+  .mobile-nav-list-item {
     display: none;
   }
 }
